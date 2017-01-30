@@ -38,6 +38,9 @@ angular.module(module.exports, [])
   return {
     restrict: 'EA',
     transclude: true,
+    scope: {
+      update: '='
+    },
     template: template,
     replace: true,
     link: function (scope, elem, attr) {
@@ -67,7 +70,7 @@ angular.module(module.exports, [])
         }
       });
 
-      scope.$on('destroy', function () {
+      scope.$on('$destroy', function () {
         hscroll && hscroll.dispose();
         vscroll && vscroll.dispose();
       });
