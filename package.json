@@ -8,6 +8,10 @@
     "build": "browserify -x angular -s angular-baron-scrollbar -t brfs -t browserify-shim -p browserify-derequire index.js > dist/index.js",
     "prepublish": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svbatalov/angular-baron-scrollbar.git"
+  },
   "keywords": [
     "angular",
     "scroll",
