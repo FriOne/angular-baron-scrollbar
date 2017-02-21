@@ -112,9 +112,14 @@ function controller($parse) {
 
     function onUpdate(n, o) {
       if (n) {
+        var prevOnBottom = $scope.onBottom;
         hscroll && hscroll.update();
         vscroll && vscroll.update();
         $scope.update = false;
+
+        if ($scope.toBottomOnInit && prevOnBottom) {
+          moveToBottom();
+        }
       }
     }
 
